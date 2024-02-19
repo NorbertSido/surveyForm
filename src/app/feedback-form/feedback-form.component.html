@@ -1,0 +1,89 @@
+<!--========== Header section ==========-->
+<section id="header" class="flex flex-col justify-center items-center font-bold mb-2 md:">
+    <h1 id="title" class="text-4xl">Workout habits</h1>
+    <p id="description" class="font-bold italic">Thank you, if you fill this questionnaire!</p>
+  </section>
+  
+  <!--========== Form section ==========-->
+  <section class="bg-form-color border-2 border-yellow-300 w-form-width min-w-custom-min max-w-custom-max px-8 py-2">
+      <form [formGroup]="surveyForm" (ngSubmit)="submitForm()" novalidate id="survey-form" class="flex flex-col">
+        <!--========== User informs ==========-->
+        <div formGroupName="userInform" class="flex flex-col">
+          <!------- Name input ------->
+          <label for="name" id="name-label">Name <span>*</span></label>
+          <input formControlName="username" type="text" name="username" id="name" placeholder="Enter your name">
+          <arv-validation-messages for="username" class="invalid-feedback"></arv-validation-messages>
+
+          <!------- Email input ------->
+          <label for="email" id="email-label">E-mail <span>*</span></label>
+          <input formControlName="email" type="email" name="email" id="email" placeholder="Enter your email">
+          <arv-validation-messages for="email" class="invalid-feedback"></arv-validation-messages>
+          
+          <!------- Age input ------->
+          <label for="age" id="age-label">Age <span>*</span></label>
+          <input formControlName="age" type="number" name="age" id="age" placeholder="Enter your age">
+          <arv-validation-messages for="age" class="invalid-feedback"></arv-validation-messages>
+        </div>
+       
+        <!--========== Gender question ==========-->
+        <div>
+          <fieldset class="flex flex-row gap-5">
+            <legend>What is your gender? <span>*</span></legend>
+            <div class="where-div" *ngFor="let where of genderOptions">
+              <label class="where-label">
+                <input formControlName="gender" type="radio" [value]="where.value">
+                {{where.label}}
+              </label>
+            </div>
+          </fieldset>
+          <arv-validation-messages for="gender" class="invalid-feedback"></arv-validation-messages>
+        </div>
+        
+        <!--========== Partner question ==========-->
+        <div class="flex flex-col">
+          <label for="partner" id="dropdown-label">Who did you train with? <span>*</span></label>
+          <select formControlName="partner" name="partner" id="dropdown">
+            <option value="null" disabled>Select your partner</option>
+            <option *ngFor="let option of partnerOptions" [value]="option.value">{{option.label}}</option>
+          </select>
+          <arv-validation-messages for="partner" class="invalid-feedback"></arv-validation-messages>
+        </div>
+  
+        <!--========== Time question ==========-->
+        <div>
+          <label id="times-label">How many times workout per week? <span>*</span></label>
+            <select formControlName="times" name="trainTime" id="trainTime">
+              <option value="null" disabled >Select the time</option>
+              <option *ngFor="let option of timeOptions" [value]="option.value">{{option.label}}</option>
+            </select>
+          <arv-validation-messages for="times" class="invalid-feedback"></arv-validation-messages>
+        </div>
+    
+        <!--========== Workouts question ==========-->
+        <div class="mb-2">
+          <fieldset id="tried" class="grid grid-cols-3">
+            <legend>What workout have you tried? <span>*</span></legend>
+              <div *ngFor="let tried of triedOptions" class="tried-div">
+                <label class="tried-label">
+                  <input formControlName="tried" type="checkbox" name="tried.name" [value]="tried.value">
+                  {{tried.label}}
+                </label>
+              </div>
+            </fieldset>
+            <arv-validation-messages for="tried" class="invalid-feedback"></arv-validation-messages>
+        </div>
+    
+        <!--========== Health problem question ==========-->
+        <div>
+          <fieldset>
+            <label for="healthProblem">Any health problem?</label>
+            <textarea formControlName="healthProblem" name="healthProblem" id="healthProblem" placeholder="Write here your health probmels"></textarea>
+          </fieldset>
+        </div>
+   
+        <!--========== Submit button ==========-->
+        <div>
+          <button type="submit" id="submit" [disabled]="!surveyForm.valid" class="w-full text-base bg-btn-default rounded-md cursor-pointer my-2 p-3 hover:bg-opacity-60">Submit</button>
+        </div>
+      </form>
+  </section>

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Import Tailwind CSS base, components, and utilities styles
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* Display */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Style */
+    font-family: Poppins, sans-serif;
+    color: #f5f6f7;
+    background:url("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+}

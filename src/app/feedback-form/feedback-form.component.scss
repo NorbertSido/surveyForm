@@ -1,0 +1,67 @@
+/* ----- Question labels formatting ----- */
+#name-label,
+#email-label,
+#age-label,
+#dropdown-label,
+#times-label,
+label[for="healthProblem"]
+{
+  /* Display */
+  margin: 0.5rem 0;
+}
+
+/* ----- Text & select inputs formatting ----- */
+#name,
+#email,
+#age,
+#dropdown,
+#trainTime,
+textarea
+{
+  /* Display */
+  margin-bottom: 0.5rem;
+  padding: 0;
+  width: 100%;
+  /* Style */
+  color: #000;
+  border: none;
+  border-radius: 0.2rem;
+  min-height: 2rem;
+  text-indent: 1rem;
+}
+
+/* ----- Radio & Checkbox formatting ----- */ 
+.where-div,
+.tried-div
+{
+    /* Display */ 
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.2rem;
+}
+
+.where-label,
+.tried-label
+{
+  /* Display */
+    order: 1;
+}
+
+/* ----- Textare formatting ----- */
+textarea 
+{
+  /* Display */
+  height: 6rem;
+}
+
+/* ----- Error formatting ----- */
+.invalid-feedback
+{
+  /* Display */  
+  width: 100%;
+  margin-top: .25rem;
+  /* Style */
+  font-weight: bolder;
+  font-size: 80%;
+  color: red;
+}

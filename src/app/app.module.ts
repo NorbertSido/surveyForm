@@ -3,14 +3,22 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveValidationModule } from 'angular-reactive-validation';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedbackFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ReactiveValidationModule,
   ],
   providers: [
     provideClientHydration()
