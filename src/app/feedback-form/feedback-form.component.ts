@@ -8,7 +8,6 @@ import { Validators } from 'angular-reactive-validation';
   styleUrl: './feedback-form.component.scss',
 })
 export class FeedbackFormComponent {
-[x: string]: any;
   surveyForm: FormGroup;
 
   partnerOptions = [
@@ -77,7 +76,7 @@ export class FeedbackFormComponent {
       healthProblem: [''],
     });
   }
-  
+
   submitForm() {
     if (this.surveyForm.valid) {
       console.log(this.surveyForm.value);
